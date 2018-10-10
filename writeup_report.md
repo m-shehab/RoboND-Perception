@@ -75,5 +75,5 @@ Three .yaml files: `output_1.yaml`, `output_2.yaml`, `output_3.yaml` for the giv
 
 ### 8. Pick and Place 
 I tried everything. All the phases are running well and the collision map is constructed as specified,
-but unfortunately everytime the call of `pick_place_routine` rosservice retrun resp.success with False. 
+but unfortunately everytime the call of `pick_place_routine` rosservice return resp.success with False. 
 I have no idea about the cause for this 

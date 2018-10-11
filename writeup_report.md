@@ -10,7 +10,7 @@ Before starting perception pipeline description, we build the project as explain
 6. Rotating Robot for Collision Map creation 
 7. Collision Map creation 
 8. Output yaml files  
-9. Pick and Place 
+9. Conclusion  
 
 [//]: # (Image References) 
 [image1]: ./images/Figure_1.png
@@ -256,7 +256,7 @@ Object Recognition for the three worlds is shown below
 ![alt_text][image10]
 ![alt_text][image11]
 
-### 9. Pick and Place 
-I tried everything. All the phases are running well and the collision map is constructed as specified,
-but unfortunately everytime the call of `pick_place_routine` rosservice return resp.success with False. 
-I have no idea about the cause for this 
+### 9. Conclusion 
+In my code, **all the phases of perception pipeline are working well without failures and with good accuracy**. 
+However, the accuracy could be increased by fine tunning of filters and features. First of all, more information may be captured by decreasing `LEAF_SIZE` in the voxel downsampling filter. Also, the region of interest in the scene is an important issue which handled by passthrough filter. When trying to filter through y direction besides z direction it gave me higher accuracy. For outlier removal, I tried some values until I have resonable response, but I think for reliable perception pipeline, the camera must be calibrated and statistical analysis is performed on its measurements to compute its accuracy and so determine the optimum parameters for outlier removal filters. Lastly, for better recognition, I used nbin=32 for color and normal histograms of the image to be used as features. If the objects in the world changes, these values may give lower accuracy. I think this is a next step, to make the pipeline more robust to different world environments. Here We have no focus on light effects which should affect classification. 
+**For the extra part**, I tried everything. All the phases are running well and the collision map is constructed as specified, but unfortunately everytime the call of `pick_place_routine` rosservice return resp.success with False. I have no idea about the cause for this 

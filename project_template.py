@@ -301,7 +301,7 @@ if __name__ == '__main__':
     reached_right = False 
     reached_left = False 
     reached_center = False 
-    loc = 0.0s
+    loc = 0.0
     collision_map = pcl.PointCloud()
     
     # TODO: ROS node initialization
